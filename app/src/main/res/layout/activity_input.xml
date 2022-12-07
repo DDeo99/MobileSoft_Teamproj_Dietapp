@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InputActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_back" />
+
+    <ScrollView
+        android:id="@+id/sv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toTopOf="@id/register_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="24dp">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="16dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="16dp" />
+
+            <ImageButton
+                android:id="@+id/camera_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/bg_primary_rounded_8dp"
+                android:padding="8dp"
+                android:src="@drawable/ic_camera"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/white" />
+
+            <ImageView
+                android:id="@+id/food_image_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/guide_end"
+                app:layout_constraintStart_toStartOf="@+id/guide_start"
+                app:layout_constraintTop_toBottomOf="@id/camera_button" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/map_button"
+                style="@style/Theme.MobileTeamProj.Button.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:text="위치 입력"
+                android:fontFamily="@font/flowersaltf"
+                app:layout_constraintEnd_toStartOf="@+id/guide_end"
+                app:layout_constraintTop_toBottomOf="@+id/food_image_view" />
+
+            <TextView
+                android:id="@+id/address_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="식사 장소를 입력해주세요."
+                android:fontFamily="@font/flowersaltf"
+                android:textSize="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/map_button"
+                app:layout_constraintEnd_toStartOf="@+id/map_button"
+                app:layout_constraintStart_toStartOf="@+id/guide_start"
+                app:layout_constraintTop_toTopOf="@+id/map_button" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/food_name_text_field"
+                style="@style/Theme.MobileTeamProj.TextField"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:hint="음식 이름"
+                android:fontFamily="@font/flowersaltf"
+                app:layout_constraintEnd_toStartOf="@+id/guide_end"
+                app:layout_constraintStart_toStartOf="@+id/guide_start"
+                app:layout_constraintTop_toBottomOf="@+id/address_text" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/food_number_text_filed"
+                style="@style/Theme.MobileTeamProj.TextField"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:hint="음식 수량"
+                android:fontFamily="@font/flowersaltf"
+                app:layout_constraintEnd_toStartOf="@+id/guide_end"
+                app:layout_constraintStart_toStartOf="@+id/guide_start"
+                app:layout_constraintTop_toBottomOf="@+id/food_name_text_field" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/meal_time_text_filed"
+                style="@style/Theme.MobileTeamProj.TextField"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:hint="식사 시간(YYYY-MM-DD/hh:mm)"
+                android:fontFamily="@font/flowersaltf"
+                app:layout_constraintEnd_toStartOf="@+id/guide_end"
+                app:layout_constraintStart_toStartOf="@+id/guide_start"
+                app:layout_constraintTop_toBottomOf="@+id/food_number_text_filed" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/kcal_text_field"
+                style="@style/Theme.MobileTeamProj.TextField"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:hint="칼로리"
+                android:fontFamily="@font/flowersaltf"
+                app:layout_constraintEnd_toStartOf="@+id/guide_end"
+                app:layout_constraintStart_toStartOf="@+id/guide_start"
+                app:layout_constraintTop_toBottomOf="@+id/meal_time_text_filed" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/evaluation_text_field"
+                style="@style/Theme.MobileTeamProj.TextField"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:hint="음식 소감"
+                android:fontFamily="@font/flowersaltf"
+                app:layout_constraintEnd_toStartOf="@+id/guide_end"
+                app:layout_constraintStart_toStartOf="@+id/guide_start"
+                app:layout_constraintTop_toBottomOf="@+id/kcal_text_field" />
+
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/register_button"
+        style="@style/Theme.MobileTeamProj.Button.Large"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="등록하기"
+        android:fontFamily="@font/flowersaltf"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
